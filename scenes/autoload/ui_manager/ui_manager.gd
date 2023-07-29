@@ -1,11 +1,14 @@
 extends Control
 
+
 enum MenuType {
 	NEW_RECORD
 }
 
+
 @export var new_record_menu_scene: PackedScene
 @export var menu_container: Control
+
 
 func show_menu(menuType: MenuType):
 	var menu: BaseMenu

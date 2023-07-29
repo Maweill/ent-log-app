@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8wab8cyr5jee"]
+[gd_scene load_steps=3 format=3 uid="uid://c8wab8cyr5jee"]
 
 [ext_resource type="Script" path="res://scenes/ui/new_record_menu/new_record_menu.gd" id="1_jifdv"]
+[ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="2_2sxhr"]
 
 [node name="NewRecordMenu" type="Control"]
 layout_mode = 3
@@ -18,3 +19,61 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="AddMovie" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Фильм"
+icon = ExtResource("2_2sxhr")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="AddBook" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Книга"
+icon = ExtResource("2_2sxhr")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="AddMusic" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Музыка"
+icon = ExtResource("2_2sxhr")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="AddGame" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Игра"
+icon = ExtResource("2_2sxhr")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[connection signal="pressed" from="GridContainer/AddMovie" to="." method="_on_add_movie_pressed"]
+[connection signal="pressed" from="GridContainer/AddBook" to="." method="_on_add_book_pressed"]
+[connection signal="pressed" from="GridContainer/AddMusic" to="." method="_on_add_music_pressed"]
+[connection signal="pressed" from="GridContainer/AddGame" to="." method="_on_add_game_pressed"]
