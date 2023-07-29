@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://doiolpuk2658j"]
+
+[ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="1_47njg"]
+[ext_resource type="Script" path="res://scenes/ui/navigation_menu/navigation_menu.gd" id="1_w18ip"]
+[ext_resource type="PackedScene" uid="uid://c8wab8cyr5jee" path="res://scenes/ui/new_record_menu/new_record_menu.tscn" id="2_xj6bf"]
+
+[node name="NavigationMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w18ip")
+new_record_menu_scene = ExtResource("2_xj6bf")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Categories" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Категории"
+icon = ExtResource("1_47njg")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Calendar" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Календарь"
+icon = ExtResource("1_47njg")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="NewRecord" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Запись"
+icon = ExtResource("1_47njg")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Feed" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Лента"
+icon = ExtResource("1_47njg")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Settings" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Настройки"
+icon = ExtResource("1_47njg")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[connection signal="pressed" from="HBoxContainer/NewRecord" to="." method="_on_new_record_pressed"]
