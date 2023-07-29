@@ -28,7 +28,7 @@ window/handheld/orientation=5
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg")
+enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg", "res://addons/quick_script_change/plugin.cfg")
 
 [rendering]
 
