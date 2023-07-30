@@ -74,4 +74,5 @@ icon = ExtResource("1_47njg")
 icon_alignment = 1
 vertical_icon_alignment = 0
 
+[connection signal="pressed" from="HBoxContainer/Categories" to="." method="_on_categories_pressed"]
 [connection signal="pressed" from="HBoxContainer/NewRecord" to="." method="_on_new_record_pressed"]

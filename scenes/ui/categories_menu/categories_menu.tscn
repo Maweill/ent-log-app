@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdoo3qyj3rt6e"]
+
+[ext_resource type="Script" path="res://scenes/ui/categories_menu/categories_menu.gd" id="1_hyle3"]
+[ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="1_u6cy1"]
+
+[node name="CategoriesMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hyle3")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CategoriesList" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Movies" type="Button" parent="CategoriesList"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Фильмы"
+icon = ExtResource("1_u6cy1")
+
+[node name="Books" type="Button" parent="CategoriesList"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Книги"
+icon = ExtResource("1_u6cy1")
+
+[node name="Music" type="Button" parent="CategoriesList"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Музыка"
+icon = ExtResource("1_u6cy1")
+
+[node name="Games" type="Button" parent="CategoriesList"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 60
+text = "Игры"
+icon = ExtResource("1_u6cy1")

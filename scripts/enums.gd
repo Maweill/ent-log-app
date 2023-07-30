@@ -1,5 +1,6 @@
 class_name Enums
 
 enum MenuType {
-	NEW_RECORD
+	NEW_RECORD,
+	CATEGORIES
 }

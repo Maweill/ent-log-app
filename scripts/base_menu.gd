@@ -11,3 +11,4 @@ func show_menu() -> void:
 
 func hide_menu() -> void:
 	print('hide menu')
+	queue_free()
