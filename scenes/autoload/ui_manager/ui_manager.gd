@@ -24,7 +24,6 @@ func show_menu(menuType: Enums.MenuType):
 			return
 	_current_menu.type = menuType
 	_menu_container.add_child(_current_menu)
-	#_current_menu.show_menu()
 
 
 func hide_all_menus():
