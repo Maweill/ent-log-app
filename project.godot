@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 UiManager="*res://scenes/autoload/ui_manager/ui_manager.tscn"
-Panku="*res://addons/panku_console/console.tscn"
 
 [display]
 
@@ -29,7 +28,7 @@ window/handheld/orientation=5
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/quick_script_change/plugin.cfg")
+enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg", "res://addons/quick_script_change/plugin.cfg")
 
 [rendering]
 
