@@ -2,8 +2,7 @@ extends BaseMenu
 
 
 func _on_add_movie_pressed() -> void:
-	#TODO Открыть форму для добавления кино
-	pass # Replace with function body.
+	UiManager.show_menu(Enums.MenuType.RECORD_MOVIE)
 
 
 func _on_add_book_pressed() -> void:

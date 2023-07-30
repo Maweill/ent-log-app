@@ -2,6 +2,7 @@ extends Control
 
 @export var _new_record_menu_scene: PackedScene
 @export var _categories_menu_scene: PackedScene
+@export var _record_movie_menu_scene: PackedScene
 @export var _menu_container: Control
 
 var _current_menu_list: Array[BaseMenu]
@@ -15,6 +16,8 @@ func show_menu(menuType: Enums.MenuType):
 			_current_menu_list.append(_instantiate_menu(_new_record_menu_scene))
 		Enums.MenuType.CATEGORIES:
 			_current_menu_list.append(_instantiate_menu(_categories_menu_scene))
+		Enums.MenuType.RECORD_MOVIE:
+			_current_menu_list.append(_instantiate_menu(_record_movie_menu_scene))
 		_:
 			printerr('wrong menu type')
 	_current_menu.type = menuType

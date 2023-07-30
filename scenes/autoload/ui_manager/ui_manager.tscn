@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://fwfa33h333vo"]
+[gd_scene load_steps=6 format=3 uid="uid://fwfa33h333vo"]
 
 [ext_resource type="Script" path="res://scenes/autoload/ui_manager/ui_manager.gd" id="1_5xrnx"]
 [ext_resource type="PackedScene" uid="uid://doiolpuk2658j" path="res://scenes/ui/navigation_menu/navigation_menu.tscn" id="2_3pic8"]
 [ext_resource type="PackedScene" uid="uid://c8wab8cyr5jee" path="res://scenes/ui/new_record_menu/new_record_menu.tscn" id="2_fj6qr"]
 [ext_resource type="PackedScene" uid="uid://cdoo3qyj3rt6e" path="res://scenes/ui/categories_menu/categories_menu.tscn" id="3_jt3lg"]
+[ext_resource type="PackedScene" uid="uid://cm6vs551uq5qk" path="res://scenes/ui/new_record_menu/record_movie_menu/record_movie_menu.tscn" id="4_gxgb5"]
 
 [node name="UiManager" type="Control" node_paths=PackedStringArray("_menu_container")]
 layout_mode = 3
@@ -15,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_5xrnx")
 _new_record_menu_scene = ExtResource("2_fj6qr")
 _categories_menu_scene = ExtResource("3_jt3lg")
+_record_movie_menu_scene = ExtResource("4_gxgb5")
 _menu_container = NodePath("MenuScreen")
 
 [node name="MenuScreen" type="Control" parent="."]

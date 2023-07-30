@@ -2,5 +2,6 @@ class_name Enums
 
 enum MenuType {
 	NEW_RECORD,
-	CATEGORIES
+	CATEGORIES,
+	RECORD_MOVIE
 }

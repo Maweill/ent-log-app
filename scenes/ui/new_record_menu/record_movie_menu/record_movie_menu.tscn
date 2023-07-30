@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm6vs551uq5qk"]
+
+[ext_resource type="Script" path="res://scenes/ui/new_record_menu/record_movie_menu/record_movie_menu.gd" id="1_t7mes"]
+[ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="2_tuq8i"]
+
+[node name="RecordMovieMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7mes")
+
+[node name="FileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+mode = 3
+initial_position = 1
+size = Vector2i(631, 600)
+access = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FormElements" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MovieName" type="LineEdit" parent="FormElements"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Название"
+alignment = 1
+
+[node name="MovieCover" type="TextureButton" parent="FormElements"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_tuq8i")
+stretch_mode = 0
+
+[node name="RateButtons" type="HBoxContainer" parent="FormElements"]
+layout_mode = 2
+
+[node name="Dislike" type="Button" parent="FormElements/RateButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Не понравилось"
+icon = ExtResource("2_tuq8i")
+
+[node name="Like" type="Button" parent="FormElements/RateButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Понравилось"
+icon = ExtResource("2_tuq8i")
+
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="FormElements/MovieCover" to="." method="_on_movie_cover_pressed"]
