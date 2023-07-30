@@ -22,7 +22,7 @@ func show_menu(menuType: Enums.MenuType):
 			printerr('wrong menu type')
 			return
 	_current_menu.type = menuType
-	_menu_container.call_deferred("add_child", _current_menu)
+	add_child(_current_menu)
 	#_current_menu.show_menu()
 
 
