@@ -9,8 +9,9 @@ var _current_menu_list: Array[BaseMenu]
 
 func show_menu(menuType: Enums.MenuType):
 	if (_current_menu and _current_menu.type == menuType):
+		print('show_menu return in the beginning')
 		return
-
+	print('show_menu started')
 	match menuType:
 		Enums.MenuType.NEW_RECORD:
 			_current_menu_list.append(_instantiate_menu(_new_record_menu_scene))
@@ -21,7 +22,9 @@ func show_menu(menuType: Enums.MenuType):
 		_:
 			printerr('wrong menu type')
 	_current_menu.type = menuType
+	print('show_menu before add_child()')
 	_menu_container.add_child(_current_menu)
+	print('show_menu after add_child()')
 	_current_menu.show_menu()
 
 
