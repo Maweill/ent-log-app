@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdoo3qyj3rt6e" path="res://scenes/ui/categories_menu/categories_menu.tscn" id="3_jt3lg"]
 [ext_resource type="PackedScene" uid="uid://cm6vs551uq5qk" path="res://scenes/ui/new_record_menu/record_movie_menu/record_movie_menu.tscn" id="4_gxgb5"]
 
-[node name="UiManager" type="Control" node_paths=PackedStringArray("_menu_container")]
+[node name="UiManager" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,9 +17,9 @@ script = ExtResource("1_5xrnx")
 _new_record_menu_scene = ExtResource("2_fj6qr")
 _categories_menu_scene = ExtResource("3_jt3lg")
 _record_movie_menu_scene = ExtResource("4_gxgb5")
-_menu_container = NodePath("MenuScreen")
 
 [node name="MenuScreen" type="Control" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 0.90346
