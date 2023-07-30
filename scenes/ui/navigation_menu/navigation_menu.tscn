@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://doiolpuk2658j"]
+[gd_scene load_steps=3 format=3 uid="uid://doiolpuk2658j"]
 
 [ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="1_47njg"]
 [ext_resource type="Script" path="res://scenes/ui/navigation_menu/navigation_menu.gd" id="1_w18ip"]
-[ext_resource type="PackedScene" uid="uid://c8wab8cyr5jee" path="res://scenes/ui/new_record_menu/new_record_menu.tscn" id="2_xj6bf"]
 
 [node name="NavigationMenu" type="Control"]
 layout_mode = 3
@@ -12,7 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w18ip")
-new_record_menu_scene = ExtResource("2_xj6bf")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1

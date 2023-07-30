@@ -4,6 +4,11 @@
 			"uuid": "a82c4484-3dc0-4e66-ae21-8a400dd27826",
 			"title": "Task",
 			"color": "42c2ff"
+		},
+		{
+			"uuid": "509b2da2-85b9-470d-bda0-231a5f3df8db",
+			"title": "Bug",
+			"color": "f70707"
 		}
 	],
 	"stages": [
@@ -25,7 +30,9 @@
 		{
 			"uuid": "83f831e0-3b88-46ed-b8f1-08a92ccecb5a",
 			"title": "Done",
-			"tasks": []
+			"tasks": [
+				"10bc0a52-f688-49ab-b0af-3b569de46e74"
+			]
 		}
 	],
 	"tasks": [
@@ -55,6 +62,13 @@
 			"title": "Форма добавления книги",
 			"description": "",
 			"category": "a82c4484-3dc0-4e66-ae21-8a400dd27826",
+			"steps": []
+		},
+		{
+			"uuid": "10bc0a52-f688-49ab-b0af-3b569de46e74",
+			"title": "Возможность открыть меню несколько раз",
+			"description": "",
+			"category": "509b2da2-85b9-470d-bda0-231a5f3df8db",
 			"steps": []
 		}
 	],

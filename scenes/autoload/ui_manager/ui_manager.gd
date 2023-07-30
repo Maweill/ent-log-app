@@ -1,21 +1,19 @@
 extends Control
 
+@export var _new_record_menu_scene: PackedScene
+@export var _menu_container: Control
 
-enum MenuType {
-	NEW_RECORD
-}
+var _current_menu: BaseMenu
 
-
-@export var new_record_menu_scene: PackedScene
-@export var menu_container: Control
-
-
-func show_menu(menuType: MenuType):
-	var menu: BaseMenu
+func show_menu(menuType: Enums.MenuType):
+	if (_current_menu and _current_menu.type == menuType):
+		return
+	
 	match menuType:
-		MenuType.NEW_RECORD:
-			menu = new_record_menu_scene.instantiate() as BaseMenu
+		Enums.MenuType.NEW_RECORD:
+			_current_menu = _new_record_menu_scene.instantiate() as BaseMenu
 		_:
 			printerr('wrong menu type')
-	menu_container.add_child(menu)
-	menu.show_menu()
+	_current_menu.type = menuType
+	_menu_container.add_child(_current_menu)
+	_current_menu.show_menu()
