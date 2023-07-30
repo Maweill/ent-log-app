@@ -21,12 +21,9 @@ func show_menu(menuType: Enums.MenuType):
 		_:
 			printerr('wrong menu type')
 			return
-	if _current_menu:
-		_current_menu.type = menuType
-		_menu_container.add_child(_current_menu)
-		_current_menu.show_menu()
-	else:
-		printerr('Failed to instantiate menu')
+	_current_menu.type = menuType
+	_menu_container.call_deferred("add_child", _current_menu)
+	#_current_menu.show_menu()
 
 
 func hide_all_menus():
