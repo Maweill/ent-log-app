@@ -21,12 +21,12 @@ func _on_save_pressed() -> void:
 
 	# save
 	var json_data = JSON.stringify(movie_model.export_to_dict())
-	var file := FileAccess.open("movie_model_%s" % movie_model.id, FileAccess.WRITE)
+	var file := FileAccess.open("user://movie_model_%s" % movie_model.id, FileAccess.WRITE)
 	file.store_string(json_data)
 	file.close()
 
 	# load
-	file = FileAccess.open("movie_model_%s" % movie_model.id, FileAccess.READ)
+	file = FileAccess.open("user://movie_model_%s" % movie_model.id, FileAccess.READ)
 	var content = file.get_as_text()
 	file.close()
 	var data := JSON.parse_string(content) as Dictionary
