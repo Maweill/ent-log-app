@@ -1,26 +1,35 @@
 extends BaseMenu
 
-@onready var _movie_cover: TextureButton = %MovieCover
-@onready var _file_dialog: FileDialog = %FileDialog
+@onready var _movie_name: LineEdit = %MovieName
+
+var _is_like: bool
 
 
-func _change_texture(path: String) -> void:
-	_movie_cover.texture_normal = _load_external_tex(path)
+func _on_dislike_pressed() -> void:
+	_is_like = false
 
 
-func _load_external_tex(path) -> ImageTexture:
-	var tex_file = FileAccess.open(path, FileAccess.READ)
-	var bytes = tex_file.get_buffer(tex_file.get_len())
-	var img = Image.new()
-	img.load_png_from_buffer(bytes)
-	var imgtex = ImageTexture.create_from_image(img)
-	tex_file.close()
-	return imgtex
+func _on_like_pressed() -> void:
+	_is_like = true
 
 
-func _on_movie_cover_pressed() -> void:
-	_file_dialog.visible = true
+func _on_save_pressed() -> void:
+	var movie_model: MovieModel = MovieModel.new()
+	movie_model.id = 1
+	movie_model.is_like = _is_like
+	movie_model.movie_name = _movie_name.text
 
+	# save
+	var json_data = JSON.stringify(movie_model.export_to_dict())
+	var file := FileAccess.open("movie_model_%s" % movie_model.id, FileAccess.WRITE)
+	file.store_string(json_data)
+	file.close()
 
-func _on_file_dialog_file_selected(path: String) -> void:
-	_change_texture(path)
+	# load
+	file = FileAccess.open("movie_model_%s" % movie_model.id, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	var data := JSON.parse_string(content) as Dictionary
+	var new_movie_model := MovieModel.new()
+	new_movie_model.import_from_dict(data)
+	print(new_movie_model.movie_name)
