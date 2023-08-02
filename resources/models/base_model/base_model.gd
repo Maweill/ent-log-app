@@ -1,11 +1,13 @@
 class_name BaseModel
 
+var id: int
 
-func export_to_dict() -> Dictionary:
+
+func export_data() -> Dictionary:
 		assert(false)
 		return {}
 
 
 @warning_ignore("unused_parameter")
-func import_from_dict(dict: Dictionary) -> void:
+func import_data(dict: Dictionary) -> void:
 	assert(false)

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+ModelStorage="*res://scenes/autoload/model_storage/model_storage.tscn"
 UiManager="*res://scenes/autoload/ui_manager/ui_manager.tscn"
 
 [display]
