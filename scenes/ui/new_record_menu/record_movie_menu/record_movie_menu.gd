@@ -15,6 +15,7 @@ func _on_like_pressed() -> void:
 
 func _on_save_pressed() -> void:
 	var movie_model: MovieModel = MovieModel.new()
+	movie_model.type = Enums.ModelType.MOVIE
 	movie_model.is_like = _is_like
 	movie_model.movie_name = _movie_name.text
 	ModelStorage.add_model(movie_model)

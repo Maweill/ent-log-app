@@ -1,6 +1,7 @@
 class_name BaseModel
 
 var id: int
+var type: Enums.ModelType
 
 
 func export_data() -> Dictionary:

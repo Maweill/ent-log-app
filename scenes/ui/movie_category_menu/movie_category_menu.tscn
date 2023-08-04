@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqvcu2s36gxsa"]
+
+[ext_resource type="Script" path="res://scenes/ui/movie_category_menu/movie_category_menu.gd" id="1_dnvjv"]
+[ext_resource type="PackedScene" uid="uid://rp23wc6u6n5x" path="res://scenes/ui/movie_category_menu/movie_record_item/movie_record_item.tscn" id="2_r1r5r"]
+
+[node name="MovieCategoryMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dnvjv")
+_movie_record_item_scene = ExtResource("2_r1r5r")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MoviesRecords" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
