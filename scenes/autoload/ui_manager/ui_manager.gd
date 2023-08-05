@@ -1,31 +1,17 @@
 extends Control
 
-@export var _new_record_menu_scene: PackedScene
-@export var _categories_menu_scene: PackedScene
-@export var _record_movie_menu_scene: PackedScene
-@export var _movie_category_scene: PackedScene
+@export var _menu_scenes_with_type: Dictionary # {MenuType: PackedScene}
 
 @onready var _menu_container: Control = %MenuScreen
 
 var _current_menu_list: Array[BaseMenu]
 
-func show_menu(menuType: Enums.MenuType):
-	if (_current_menu and _current_menu.type == menuType):
+func show_menu(menu_type: Enums.MenuType):
+	if (_current_menu and _current_menu.type == menu_type):
 		return
-
-	match menuType:
-		Enums.MenuType.NEW_RECORD:
-			_current_menu_list.append(_instantiate_menu(_new_record_menu_scene))
-		Enums.MenuType.CATEGORIES:
-			_current_menu_list.append(_instantiate_menu(_categories_menu_scene))
-		Enums.MenuType.RECORD_MOVIE:
-			_current_menu_list.append(_instantiate_menu(_record_movie_menu_scene))
-		Enums.MenuType.MOVIE_CATEGORY:
-			_current_menu_list.append(_instantiate_menu(_movie_category_scene))
-		_:
-			printerr('wrong menu type')
-			return
-	_current_menu.type = menuType
+	var menu_scene: PackedScene = _menu_scenes_with_type[menu_type]
+	_current_menu_list.append(_instantiate_menu(menu_scene))
+	_current_menu.type = menu_type
 	_menu_container.add_child(_current_menu)
 
 

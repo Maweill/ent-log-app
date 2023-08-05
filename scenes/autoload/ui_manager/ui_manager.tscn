@@ -15,10 +15,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5xrnx")
-_new_record_menu_scene = ExtResource("2_fj6qr")
-_categories_menu_scene = ExtResource("3_jt3lg")
-_record_movie_menu_scene = ExtResource("4_gxgb5")
-_movie_category_scene = ExtResource("5_b60u3")
+_menu_scenes_with_type = {
+0: ExtResource("2_fj6qr"),
+1: ExtResource("3_jt3lg"),
+2: ExtResource("4_gxgb5"),
+3: ExtResource("5_b60u3")
+}
 
 [node name="MenuScreen" type="Control" parent="."]
 unique_name_in_owner = true
