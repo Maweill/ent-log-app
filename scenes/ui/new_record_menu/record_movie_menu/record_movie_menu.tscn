@@ -55,12 +55,14 @@ text = "Понравилось"
 icon = ExtResource("2_tuq8i")
 
 [node name="Save" type="Button" parent="FormElements"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
 text = "Сохранить"
 icon = ExtResource("2_tuq8i")
 
+[connection signal="text_changed" from="FormElements/MovieName" to="." method="_on_movie_name_text_changed"]
 [connection signal="pressed" from="FormElements/RateButtons/Dislike" to="." method="_on_dislike_pressed"]
 [connection signal="pressed" from="FormElements/RateButtons/Like" to="." method="_on_like_pressed"]
 [connection signal="pressed" from="FormElements/Save" to="." method="_on_save_pressed"]
