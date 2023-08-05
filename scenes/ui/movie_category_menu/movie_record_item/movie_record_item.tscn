@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://rp23wc6u6n5x"]
+[gd_scene load_steps=5 format=3 uid="uid://rp23wc6u6n5x"]
 
 [ext_resource type="Script" path="res://scenes/ui/movie_category_menu/movie_record_item/movie_record_item.gd" id="1_co1fs"]
 [ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="2_47umu"]
+[ext_resource type="Texture2D" uid="uid://d28rj3rr2upy5" path="res://assets/like.png" id="2_vx28d"]
+[ext_resource type="Texture2D" uid="uid://daj44jyjf8j83" path="res://assets/dislike.png" id="3_3418x"]
 
 [node name="MovieRecordItem" type="Control"]
 layout_mode = 3
@@ -13,6 +15,8 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_co1fs")
+_like_texture = ExtResource("2_vx28d")
+_dislike_texture = ExtResource("3_3418x")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1

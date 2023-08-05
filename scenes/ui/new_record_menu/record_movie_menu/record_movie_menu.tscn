@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm6vs551uq5qk"]
+[gd_scene load_steps=5 format=3 uid="uid://cm6vs551uq5qk"]
 
 [ext_resource type="Script" path="res://scenes/ui/new_record_menu/record_movie_menu/record_movie_menu.gd" id="1_t7mes"]
+[ext_resource type="Texture2D" uid="uid://daj44jyjf8j83" path="res://assets/dislike.png" id="2_hxc0o"]
 [ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="2_tuq8i"]
+[ext_resource type="Texture2D" uid="uid://d28rj3rr2upy5" path="res://assets/like.png" id="3_7vnil"]
 
 [node name="RecordMovieMenu" type="Control"]
 layout_mode = 3
@@ -45,14 +47,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Не понравилось"
-icon = ExtResource("2_tuq8i")
+icon = ExtResource("2_hxc0o")
 
 [node name="Like" type="Button" parent="FormElements/RateButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Понравилось"
-icon = ExtResource("2_tuq8i")
+icon = ExtResource("3_7vnil")
 
 [node name="Save" type="Button" parent="FormElements"]
 unique_name_in_owner = true
