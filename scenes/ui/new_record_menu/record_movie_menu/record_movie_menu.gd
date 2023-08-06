@@ -24,6 +24,11 @@ func _on_like_pressed() -> void:
 
 
 func _on_save_pressed() -> void:
+	_add_model()
+	UiManager.show_menu(Enums.MenuType.MOVIE_CATEGORY)
+
+
+func _add_model() -> void:
 	var movie_model: MovieModel = MovieModel.new()
 	movie_model.type = Enums.ModelType.MOVIE
 	movie_model.is_like = _is_like
