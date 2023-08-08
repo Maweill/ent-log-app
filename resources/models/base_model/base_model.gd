@@ -1,8 +1,8 @@
 class_name BaseModel
 
 var id: int
+var created_unix_time: float
 var type: Enums.ModelType
-
 
 func export_data() -> Dictionary:
 		assert(false)

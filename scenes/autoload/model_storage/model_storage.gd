@@ -15,6 +15,7 @@ func _init() -> void:
 func add_model(model: BaseModel) -> int:
 	_last_id += 1
 	model.id = _last_id
+	model.created_unix_time = Time.get_unix_time_from_system()
 	_models_data_by_type[model.type][model.id] = model.export_data()
 	save_model(model)
 	return model.id
