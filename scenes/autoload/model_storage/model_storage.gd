@@ -21,13 +21,13 @@ func add_model(model: BaseModel) -> int:
 	return model.id
 
 
-func remove_model(model_id: int, model_type: Enums.ModelType) -> void:
-	if model_id not in _models_data_by_type[model_type].keys():
+func remove_model(model: BaseModel) -> void:
+	if model.id not in _models_data_by_type[model.type].keys():
 		return
-	_models_data_by_type[model_type].erase(model_id)
-	var dir := DirAccess.open(_get_dir_path(model_type))
-	if dir.file_exists(str(model_id)):
-		dir.remove(str(model_id))
+	_models_data_by_type[model.type].erase(model.id)
+	var dir := DirAccess.open(_get_dir_path(model.type))
+	if dir.file_exists(str(model.id)):
+		dir.remove(str(model.id))
 
 
 func save_model(model: BaseModel) -> void:
@@ -88,7 +88,7 @@ func _load_all_models() -> void:
 			var content = file.get_as_text()
 			file.close()
 			var data = JSON.parse_string(content)
-			_models_data_by_type[model_type][data.id] = data
+			_models_data_by_type[model_type][data.id as int] = data
 			file_name = dir.get_next()
 
 
