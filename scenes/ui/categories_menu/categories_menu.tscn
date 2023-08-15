@@ -57,3 +57,6 @@ text = "Игры"
 icon = ExtResource("1_u6cy1")
 
 [connection signal="pressed" from="CategoriesList/Movies" to="." method="_on_movies_pressed"]
+[connection signal="pressed" from="CategoriesList/Books" to="." method="_on_books_pressed"]
+[connection signal="pressed" from="CategoriesList/Music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="CategoriesList/Games" to="." method="_on_games_pressed"]

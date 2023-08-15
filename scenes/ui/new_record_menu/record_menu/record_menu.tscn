@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://cm6vs551uq5qk"]
 
-[ext_resource type="Script" path="res://scenes/ui/new_record_menu/record_movie_menu/record_movie_menu.gd" id="1_t7mes"]
-[ext_resource type="Texture2D" uid="uid://daj44jyjf8j83" path="res://assets/dislike.png" id="2_hxc0o"]
-[ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="2_tuq8i"]
-[ext_resource type="Texture2D" uid="uid://d28rj3rr2upy5" path="res://assets/like.png" id="3_7vnil"]
+[ext_resource type="Script" path="res://scenes/ui/new_record_menu/record_menu/record_menu.gd" id="1_3caew"]
+[ext_resource type="Texture2D" uid="uid://daj44jyjf8j83" path="res://assets/dislike.png" id="2_na6la"]
+[ext_resource type="Texture2D" uid="uid://d28rj3rr2upy5" path="res://assets/like.png" id="3_5770v"]
+[ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="4_5vmj7"]
 
-[node name="RecordMovieMenu" type="Control"]
+[node name="RecordMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_t7mes")
+script = ExtResource("1_3caew")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -31,7 +31,12 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="MovieName" type="LineEdit" parent="FormElements"]
+[node name="Category" type="OptionButton" parent="FormElements"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Name" type="LineEdit" parent="FormElements"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
@@ -47,14 +52,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Не понравилось"
-icon = ExtResource("2_hxc0o")
+icon = ExtResource("2_na6la")
 
 [node name="Like" type="Button" parent="FormElements/RateButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
 text = "Понравилось"
-icon = ExtResource("3_7vnil")
+icon = ExtResource("3_5770v")
 
 [node name="Save" type="Button" parent="FormElements"]
 unique_name_in_owner = true
@@ -62,9 +67,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
 text = "Сохранить"
-icon = ExtResource("2_tuq8i")
+icon = ExtResource("4_5vmj7")
 
-[connection signal="text_changed" from="FormElements/MovieName" to="." method="_on_movie_name_text_changed"]
+[connection signal="item_selected" from="FormElements/Category" to="." method="_on_category_item_selected"]
+[connection signal="text_changed" from="FormElements/Name" to="." method="_on_name_text_changed"]
 [connection signal="pressed" from="FormElements/RateButtons/Dislike" to="." method="_on_dislike_pressed"]
 [connection signal="pressed" from="FormElements/RateButtons/Like" to="." method="_on_like_pressed"]
 [connection signal="pressed" from="FormElements/Save" to="." method="_on_save_pressed"]

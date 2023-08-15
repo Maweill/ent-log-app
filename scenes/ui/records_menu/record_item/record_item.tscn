@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://rp23wc6u6n5x"]
 
-[ext_resource type="Script" path="res://scenes/ui/movie_category_menu/movie_record_item/movie_record_item.gd" id="1_co1fs"]
-[ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="2_47umu"]
-[ext_resource type="Texture2D" uid="uid://d28rj3rr2upy5" path="res://assets/like.png" id="2_vx28d"]
-[ext_resource type="Texture2D" uid="uid://daj44jyjf8j83" path="res://assets/dislike.png" id="3_3418x"]
+[ext_resource type="Script" path="res://scenes/ui/records_menu/record_item/record_item.gd" id="1_uunj8"]
+[ext_resource type="Texture2D" uid="uid://d28rj3rr2upy5" path="res://assets/like.png" id="2_0nuvu"]
+[ext_resource type="Texture2D" uid="uid://bf46kaeffbknr" path="res://icon.svg" id="2_k8u54"]
+[ext_resource type="Texture2D" uid="uid://daj44jyjf8j83" path="res://assets/dislike.png" id="3_ejjic"]
 
-[node name="MovieRecordItem" type="Control"]
+[node name="RecordItem" type="Control"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 3
 anchors_preset = 15
@@ -15,9 +15,9 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-script = ExtResource("1_co1fs")
-_like_texture = ExtResource("2_vx28d")
-_dislike_texture = ExtResource("3_3418x")
+script = ExtResource("1_uunj8")
+_like_texture = ExtResource("2_0nuvu")
+_dislike_texture = ExtResource("3_ejjic")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -36,7 +36,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MovieName" type="Label" parent="HBoxContainer"]
+[node name="Name" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -45,10 +45,10 @@ text = "Название"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="MovieRating" type="TextureRect" parent="HBoxContainer"]
+[node name="Rating" type="TextureRect" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("2_47umu")
+texture = ExtResource("2_k8u54")
 stretch_mode = 5
 
 [node name="DeleteSelf" type="Button" parent="HBoxContainer"]

@@ -4,6 +4,9 @@ class_name BaseMenu
 
 var type: Enums.MenuType
 
+func configure(args: Array = []) -> void:
+	pass
+
 
 func show_menu() -> void:
 	print('show menu')

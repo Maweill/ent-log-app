@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqvcu2s36gxsa"]
 
-[ext_resource type="Script" path="res://scenes/ui/movie_category_menu/movie_category_menu.gd" id="1_dnvjv"]
-[ext_resource type="PackedScene" uid="uid://rp23wc6u6n5x" path="res://scenes/ui/movie_category_menu/movie_record_item/movie_record_item.tscn" id="2_r1r5r"]
+[ext_resource type="Script" path="res://scenes/ui/records_menu/records_menu.gd" id="1_vrxq8"]
+[ext_resource type="PackedScene" uid="uid://rp23wc6u6n5x" path="res://scenes/ui/records_menu/record_item/record_item.tscn" id="2_m1rvx"]
 
-[node name="MovieCategoryMenu" type="Control"]
+[node name="RecordsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dnvjv")
-_movie_record_item_scene = ExtResource("2_r1r5r")
+script = ExtResource("1_vrxq8")
+_record_item_scene = ExtResource("2_m1rvx")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -30,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="MoviesRecords" type="VBoxContainer" parent="ScrollContainer"]
+[node name="Records" type="VBoxContainer" parent="ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
