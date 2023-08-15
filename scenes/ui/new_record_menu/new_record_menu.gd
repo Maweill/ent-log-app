@@ -38,7 +38,8 @@ func _on_save_pressed() -> void:
 
 func _init_category_button() -> void:
 	for category in Enums.ModelType:
-		_category_option_button.add_item(category, Enums.ModelType[category])
+		_category_option_button.add_item(category, Enums.ModelType[category] + 1)
+	_category_name = _category_option_button.get_item_text(0)
 
 
 func _add_model() -> void:

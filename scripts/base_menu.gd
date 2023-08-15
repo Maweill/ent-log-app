@@ -4,6 +4,7 @@ class_name BaseMenu
 
 var type: Enums.MenuType
 
+@warning_ignore("unused_parameter")
 func configure(args: Array = []) -> void:
 	pass
 
